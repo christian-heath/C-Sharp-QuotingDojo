@@ -1,0 +1,29 @@
+@{
+ViewData["Title"] = "Home Page";
+}
+@model quotingdojo.Models.Post
+<div class="container">
+    <h3>Here are the awesome quotes!</h3>
+    <div id="info">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Quote</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Created at</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var post in @ViewBag.Posts)
+                {
+                <tr>
+                    <th scope="row">@post["Quote"]</th>
+                    <td>@post["Name"]</td>
+                    <td>@post["Created_at"]</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+        <a class='btn btn-secondary' href="/">Submit New Quote</a>
+    </div>
+</div>
